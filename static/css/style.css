@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Стили для заголовков */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стили для меню */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+/* Стили для элементов меню */
+li {
+    margin: 5px 0;
+}
+
+/* Стили для ссылок */
+a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Стили для активных ссылок */
+a.active {
+    color: #fff;
+    background-color: #0066cc;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Стили при наведении на ссылку */
+a:hover {
+    color: #fff;
+    background-color: #0099ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Стили для вложенных пунктов меню */
+ul ul li a {
+    font-weight: normal;
+    color: #333;
+}
+
+ul ul li a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+ul ul li a.active {
+    background-color: #333;
+    color: #fff;
+}

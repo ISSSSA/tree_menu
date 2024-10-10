@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% if menu_item %}{{ menu_item.title }}{% else %}Главная{% endif %}</title>
+</head>
+<body>
+<h1>{% if menu_item %}{{ menu_item.title }}{% else %}Главная{% endif %}</h1>
+
+{% if menu_item %}
+    <p>Это страница для пункта меню "{{ menu_item.title }}"</p>
+    <p>URL: {{ menu_item.get_url }}</p>
+{% else %}
+    <p>Это главная страница.</p>
+{% endif %}
+
+<!-- Добавляем отрисовку меню -->
+{% load menu_tags %}
+{% draw_menu 'main_menu' %}
+</body>
+</html>

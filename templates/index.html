@@ -1,0 +1,20 @@
+{% load static %}
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Example</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Menu Example Page</h1>
+
+    <!-- Отрисовка меню -->
+    {% load menu_tags %}
+    {% draw_menu 'main_menu' %}
+    
+    <p>This is the main content of the index page.</p>
+</body>
+</html>
