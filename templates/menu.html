@@ -1,18 +1,15 @@
+
 <ul>
     {% for node in menu_tree %}
         <li>
             <a href="{{ node.item.get_url }}" class="{% if node.is_active %}active{% endif %}">
                 {{ node.item.title }}
             </a>
-            {% if node.children %}
+
+            {% if node.children and node.is_active %}
+                <!-- Рекурсивно включаем тот же шаблон для рендеринга подменю -->
                 <ul>
-                    {% for child in node.children %}
-                        <li>
-                            <a href="{{ child.item.get_url }}" class="{% if child.is_active %}active{% endif %}">
-                                {{ child.item.title }}
-                            </a>
-                        </li>
-                    {% endfor %}
+                    {% include 'menu.html' with menu_tree=node.children %}
                 </ul>
             {% endif %}
         </li>
