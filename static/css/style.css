@@ -5,17 +5,16 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Стили для заголовков */
 h1 {
     color: #333;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Стили для меню */
 ul {
     list-style-type: none;
     padding-left: 0;
+
 }
 
 ul ul {
@@ -23,19 +22,17 @@ ul ul {
     padding-left: 0;
 }
 
-/* Стили для элементов меню */
 li {
     margin: 5px 0;
 }
 
-/* Стили для ссылок */
 a {
     text-decoration: none;
     color: #0066cc;
     font-weight: bold;
 }
 
-/* Стили для активных ссылок */
+
 a.active {
     color: #fff;
     background-color: #0066cc;
@@ -43,7 +40,7 @@ a.active {
     border-radius: 5px;
 }
 
-/* Стили при наведении на ссылку */
+
 a:hover {
     color: #fff;
     background-color: #0099ff;
@@ -51,7 +48,7 @@ a:hover {
     border-radius: 5px;
 }
 
-/* Стили для вложенных пунктов меню */
+
 ul ul li a {
     font-weight: normal;
     color: #333;

@@ -14,12 +14,13 @@ def draw_menu(context, menu_name):
         for item in items:
             if item.parent == parent:
                 children = build_menu_tree(items, parent=item)
-                is_active = current_url.startswith(item.get_url())  # Активен ли этот пункт меню
+                is_active = current_url.startswith(item.get_url())
+                print(parent)
                 tree.append({
                     'item': item,
                     'children': children,
-                    'is_active': is_active or any(child['is_active'] for child in children)
-                    # Активен или есть активные потомки
+                    'is_active': is_active or any(child['is_active'] for child in children),
+                    'parent': parent
                 })
         return tree
 

@@ -1,17 +1,44 @@
-
 <ul>
     {% for node in menu_tree %}
-        <li>
-            <a href="{{ node.item.get_url }}" class="{% if node.is_active %}active{% endif %}">
-                {{ node.item.title }}
-            </a>
-
-            {% if node.children and node.is_active %}
-                <!-- Рекурсивно включаем тот же шаблон для рендеринга подменю -->
-                <ul>
-                    {% include 'menu.html' with menu_tree=node.children %}
-                </ul>
-            {% endif %}
-        </li>
+        {% if node.parent %}
+            <li>
+                {% for child in node.children %}
+                    <ul>
+                        <li>
+                            <a href="{{ child.item.get_url }}"
+                               class="{% if child.is_active %}active{% endif %}">
+                                {{ child.item.title }}
+                            </a>
+                            {% if child.children and child.is_active %}
+                                <ul>
+                                    {% include 'menu.html' with menu_tree=node.children %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
+                {% endfor %}
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ node.item.get_url }}" class="{% if node.is_active %}active{% endif %}">
+                    {{ node.item.title }}
+                </a>
+                {% for child in node.children %}
+                    <ul>
+                        <li>
+                            <a href="{{ child.item.get_url }}"
+                               class="{% if child.is_active %}active{% endif %}">
+                                {{ child.item.title }}
+                            </a>
+                            {% if child.children and child.is_active %}
+                                <ul>
+                                    <li>{% include 'menu.html' with menu_tree=node.children %}</li>
+                                </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
+                {% endfor %}
+            </li>
+        {% endif %}
     {% endfor %}
 </ul>
