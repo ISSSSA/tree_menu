@@ -25,6 +25,6 @@ INSERT INTO menu_menuitem (title, parent_id, menu_name, url, named_url,"order") 
 ('Новости', 5, 'main_menu', '/main_menu/blog/news/', NULL,2); """
 
         with connection.cursor() as cursor:
-            cursor.execute(sql_script)
+            cursor.executescript(sql_script)
 
         self.stdout.write(self.style.SUCCESS('Database has been filled with menu items.'))

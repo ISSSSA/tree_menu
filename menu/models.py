@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class MenuItem(models.Model):
     title = models.CharField(max_length=100)
     url = models.CharField(max_length=200, blank=True, null=True)
@@ -19,4 +20,3 @@ class MenuItem(models.Model):
 
     class Meta:
         ordering = ['order']
-
